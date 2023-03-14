@@ -12,18 +12,11 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB){
 }
 
 int calculatePoints(Map<String, int> team) {
-  int points = 0;
+  int freeThrows = team['Free throws'] ?? 0;
+  int twoPointer = (team['2 pointer'] ?? 0) * 2;
+  int threePointer = (team['3 pointer'] ?? 0) * 3;
 
-  team.forEach((key, value) {  
-    if (key == 'Free throws') {
-      points += value;
-    } else if (key == '2 pointer') {
-      points += value * 2;
-    } else if (key == '3 pointer') {
-      points += value * 3;
-    }
-  });
-  return points;
+  return freeThrows + twoPointer + threePointer;
 }
 
 
