@@ -9,15 +9,15 @@ if (s.length < 3) {
 
 for (int i = 0; i < s.length; i++)
 {
-  //for (int j = i + 1; j <= s.length; j++)
-  //{
+  for (int j = i + 1; j <= s.length; j++)
+  {
     String substr = s.substring(i);
-     print('substring: $substr');
+     //print('substring: $substr');
       if(isPalindrome(substr) && substr.length > longestPalindrome.length)
     {
       longestPalindrome= substr; 
     }
-  //}
+  }
 }
   if (longestPalindrome.isEmpty) return 'none';
 return longestPalindrome;
