@@ -1,14 +1,14 @@
 int whoWins(Map<String, int> teamA, Map<String, int> teamB){
-  int teamAPoints = calculatePoints(teamA);
-  int teamBPoints = calculatePoints(teamB);
+  int teamAPoints= 0;
+  int teamBPoints = 0;
 
-  if (teamAPoints > teamBPoints) {
-    return 1;
-  } else if (teamAPoints < teamBPoints) {
-    return 2;
-  } else {
+    teamAPoints = calculatePoints(teamA);
+    teamBPoints = calculatePoints(teamB);
+
+    if (teamAPoints > teamBPoints) return 1;
+    if (teamAPoints < teamBPoints) return 2;
+    
     return 0;
-  } 
 }
 
 int calculatePoints(Map<String, int> team) {
