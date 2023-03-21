@@ -7,9 +7,8 @@ Future<String> greetUser() async{
     try {
       var user = await fetchUserData();
       var fetch = jsonDecode(user);
-      var username = fetch['username'];
 
-      return username;
+      return fetch['username'];
     } catch(error) {
       return ('Error caught: $error');
     }
