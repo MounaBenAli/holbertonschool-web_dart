@@ -15,7 +15,7 @@ Future<String> greetUser() async{
       var fetch = jsonDecode(user);
       var username = fetch['username'];
 
-      return 'Hello $username';
+      return username;
     } catch(error) {
       return ('Error caught: $error');
     }
@@ -27,7 +27,8 @@ Future<String> loginUser() async{
 
     if (check == true) {
       print('There is a user: true');
-      return await greetUser();
+      var user = await greetUser();
+       return 'Hello $user';
     } else {
       print ('There is a user: false ');
       return ('Wrong credentials');
