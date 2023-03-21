@@ -9,8 +9,8 @@ Future<String> fetchUserData() => Future.delayed(
 getUserId() async {
   var user = await fetchUserData();
 
-  var fetch = jsonDecode(user);
-
-  return fetch['id'];
+  Map<String, dynamic> jsonMap = json.decode(user);
+  
+  return jsonMap['id'];
 
 }
